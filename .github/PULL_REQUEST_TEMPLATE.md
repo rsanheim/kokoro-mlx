@@ -21,5 +21,5 @@
 - [ ] All tests pass (`python -m pytest tests/ -v`)
 - [ ] README updated (if behavior changed)
 - [ ] No PyTorch or transformers dependencies introduced
-- [ ] Python 3.10 to 3.12 compatibility maintained
+- [ ] Python 3.10 to 3.13 compatibility maintained
 - [ ] Existing code style maintained

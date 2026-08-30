@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)]()
 [![Apple Silicon](https://img.shields.io/badge/Apple_Silicon-required-blue.svg)]()
-[![Python 3.10–3.12](https://img.shields.io/badge/Python-3.10--3.12-blue.svg)]()
+[![Python 3.10–3.13](https://img.shields.io/badge/Python-3.10--3.13-blue.svg)]()
 
 Kokoro TTS inference on Apple Silicon via MLX.
 
@@ -16,7 +16,7 @@ An MLX implementation of the [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-
 
 ## Quick Start
 
-**Apple Silicon required.** Python 3.10–3.12, MLX 0.31+.
+**Apple Silicon required.** Python 3.10–3.13, MLX 0.31+.
 
 ```bash
 pip install kokoro-mlx
@@ -235,7 +235,7 @@ The network runs in bf16 for throughput. At the vocoder output, the signal is pr
 
 - Apple Silicon Mac (M1 or later)
 - macOS 13+
-- Python 3.10–3.12
+- Python 3.10–3.13
 - MLX 0.31+
 
 ---
