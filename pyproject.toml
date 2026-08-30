@@ -32,7 +32,7 @@ dependencies = [
     "huggingface-hub>=1.0.0",
     "soundfile>=0.13.1",
     "safetensors>=0.7.0",
-    "misaki[en]>=0.9.4",
+    "misaki[en] @ git+https://github.com/hexgrad/misaki.git@fba1236595f2d2bf21d414ba6e57d25256afada3",
 ]
 
 [project.urls]
@@ -58,6 +58,9 @@ ignore = ["E501"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/kokoro_mlx"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
