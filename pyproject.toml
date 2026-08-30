@@ -8,7 +8,7 @@ version = "0.1.2"
 description = "Kokoro TTS inference on Apple Silicon via MLX"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.10,<3.14"
 authors = [
     { name = "Soroush Yousefpour" }
 ]
@@ -23,6 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Multimedia :: Sound/Audio :: Speech",
 ]
 dependencies = [
@@ -31,7 +32,7 @@ dependencies = [
     "huggingface-hub>=1.0.0",
     "soundfile>=0.13.1",
     "safetensors>=0.7.0",
-    "misaki[en]>=0.9.4",
+    "misaki[en] @ git+https://github.com/hexgrad/misaki.git@fba1236595f2d2bf21d414ba6e57d25256afada3",
 ]
 
 [project.urls]
@@ -45,7 +46,7 @@ audio = ["sounddevice>=0.4.0"]
 ja = ["misaki[ja]>=0.9.4"]
 zh = ["misaki[zh]>=0.9.4"]
 multilingual = ["misaki[ja,zh]>=0.9.4"]
-dev = ["pytest"]
+dev = ["pytest", "ruff"]
 
 [tool.ruff]
 target-version = "py310"
@@ -57,6 +58,9 @@ ignore = ["E501"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/kokoro_mlx"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
