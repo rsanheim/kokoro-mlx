@@ -46,7 +46,7 @@ audio = ["sounddevice>=0.4.0"]
 ja = ["misaki[ja]>=0.9.4"]
 zh = ["misaki[zh]>=0.9.4"]
 multilingual = ["misaki[ja,zh]>=0.9.4"]
-dev = ["pytest"]
+dev = ["pytest", "ruff"]
 
 [tool.ruff]
 target-version = "py310"

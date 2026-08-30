@@ -23,11 +23,13 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: pip install -e ".[dev]" ruff
+        run: |
+          python -m pip install uv
+          uv sync --extra dev --python python
 
       - name: Import smoke test
         run: |
-          python -c "
+          uv run python -c "
           from kokoro_mlx import KokoroTTS, TTSResult
           from kokoro_mlx.model import KokoroModel
           from kokoro_mlx.modules import TextEncoder, ProsodyPredictor
@@ -40,7 +42,7 @@ jobs:
           "
 
       - name: Unit tests
-        run: python -m pytest tests/ -v -m "not slow"
+        run: uv run python -m pytest tests/ -v -m "not slow"
 
       - name: Lint with ruff
-        run: ruff check src/
+        run: uv run ruff check src/
